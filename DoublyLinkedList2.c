@@ -11,12 +11,7 @@ struct Node *createnode(int nid)
 {
     struct Node *p = malloc(sizeof(struct Node));
 
-    // if (p == NULL)
-    // {
-    //     printf("Memory allocation failed\n");
-    //     exit(1);
-    // }
-
+    
     p->nodeid = nid;
     p->next = NULL;
     p->prev = NULL;
@@ -29,7 +24,7 @@ int SingleDigit(int n)
 {
     if (n < 0) n = -n; 
 
-    while (n >= 10)// single digit hobar ag porjonto loop cholbe
+    while (n >= 10)
     {
         int sum = 0;
 
@@ -38,20 +33,19 @@ int SingleDigit(int n)
             sum =sum+( n % 10);
             n = n/10;
         }
-// store kortesi number neext itiration er jonne
+
         n = sum;
     }
 
     return n;
 }
 
-// Insert korbo ascending order e
+
 void insertmiddle(struct Node **start,struct Node **end, int ins)
 {
     struct Node *newnode = createnode(ins);
     struct Node *p = *start;
 
-    // khali list
     if (*start == NULL)
     {
         *start = newnode;
@@ -111,19 +105,7 @@ void forwardtraverse(struct Node *p)
 int main(void)
 {
 
-    //-999 will terminate the input flow.
-    /*
-    while (1)
-    {
-        scanf ("%d", &nid);
-        if (nid == -999) break;
-        p = createnode (nid);
-
-        if (start == NULL) { start = p; current = p; }
-        else { current->next = p; p->prev = current; current = p; }
-    }
-    end = current;
-    */
+    
 
     struct Node *start = NULL;
     struct Node *end = NULL;
